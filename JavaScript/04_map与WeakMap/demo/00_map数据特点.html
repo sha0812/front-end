@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // //1. map的键名可以是任意数据
+        // var map = new Map();
+        // var o = { num: 1 };
+        // map.set(o, '111');
+        // console.log(map);
+
+
+        // // 2.map有顺序
+        // var map = new Map([[2, '111'], [1, '222']]);
+        // console.log(map);
+
+        // // obj自动排序
+        // var obj = { '2': '111', '1': '222' }
+        // console.log(obj);
+
+        // 3. 可迭代
+        const map = new Map([
+            ['a', 1],
+            ['b', 2],
+        ])
+        console.log(map);
+        for (let [key, value] of map) {
+            console.log(key, value)
+        }
+        var obj = { '2': '111', '1': '222' }
+        console.log(obj);
+        for (let [key, value] of obj) {
+            console.log(key, value)
+        }
+    </script>
+</body>
+
+</html>

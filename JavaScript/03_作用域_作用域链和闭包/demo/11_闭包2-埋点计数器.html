@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+  
+    <button>按钮1</button>
+    <button>按钮2</button>
+    <script>
+        // 应用场景
+        // 1.埋点（是网站分析的一种常用的数据采集方法）计数器
+        function count() {
+            var num = 0;
+            return function () {
+                return ++num
+            }
+        }
+        var getNum = count();
+        var getNewNum = count();
+        
+        document.querySelectorAll('button')[0].onclick = function(){
+            console.log('点击加入购物车次数： '+getNum());
+        }
+        document.querySelectorAll('button')[1].onclick = function(){
+            console.log('点击付款次数： '+getNewNum());
+        }
+        
+        
+        
+    </script>
+</body>
+
+</html>

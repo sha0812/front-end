@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 浅克隆与合并
+        let name = { name: "aaa" }
+        let age = { age: 'bbb' }
+        let person = { ...name, ...age }
+        console.log(person) // { name: "aaa", age: 'bbb' }
+
+        let a = [1,2,3];
+        let b = [4,5];
+        let c = [...a,...b];
+        console.log(c);
+
+        // 2. 提取JSON数据
+        let JsonData = { id: 10, status: "OK", data: [111, 222] } 
+        let { id, status, data: numbers } = JsonData; 
+        console.log(id, status, numbers); //10 "OK" [111, 222]
+
+        // 3. 函数参数的定义
+        // 参数有序
+        function fun1([a, b, c]) { console.log(a, b, c) } 
+        fun1([1, 2, 3]); 
+
+        // 参数无序
+        function fun2({ x, y, z }) { console.log(x, y, z) } 
+        fun2({ z: 3, x: 2, y: 1 });
+
+        // 参数有默认值
+        function fun3 ([a=1,b]) {
+            console.log(a,b);
+        }
+        fun3([,3])
+
+    </script>
+</body>
+
+</html>

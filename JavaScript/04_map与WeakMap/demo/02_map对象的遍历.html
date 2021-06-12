@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 遍历map数据
+        const map = new Map([
+            ['a', 1],
+            ['b', 2],
+        ])
+
+        for (let key of map.keys()) {
+            console.log(key)
+        }
+        // "a"
+        // "b"
+
+        for (let value of map.values()) {
+            console.log(value)
+        }
+        // 1
+        // 2
+
+        for (let item of map.entries()) {
+            console.log(item)
+        }
+        // ["a", 1]
+        // ["b", 2]
+
+        // 或者
+        for (let [key, value] of map.entries()) {
+            console.log(key, value)
+        }
+        // "a" 1
+        // "b" 2
+
+        // for...of...遍历map等同于使用map.entries()
+
+        for (let [key, value] of map) {
+            console.log(key, value)
+        }
+        // "a" 1
+        // "b" 2
+    </script>
+</body>
+
+</html>

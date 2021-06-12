@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // var 变量提升
+        // console.log(a);
+        // var a = 1;
+
+        // let 暂时性死区
+        
+        // let b = 1;
+        // {   console.log(b)
+        //     //let b =  2;
+        // }
+
+        const b = 1;
+        {   console.log(b)
+            const b =  2;
+        }
+    </script>
+</body>
+</html>

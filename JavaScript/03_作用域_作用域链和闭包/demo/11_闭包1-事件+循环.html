@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <ul>
+        <li>1元素</li>
+        <li>2元素</li>
+        <li>3元素</li>
+        <li>4元素</li>
+        <li>5元素</li>
+        <li>6元素</li>
+    </ul>
+    <script>
+        // 2.事件+循环
+        // 形成原因就是操作的是同一个词法环境,因为onclick后面的函数都是一个闭包，但是操作的是同一个词法环境
+        // 操作的i都是同一个i，本质上是操作的是同一个词法环境，但是使用匿名函数之后，就形成一个闭包
+        // 操作的就是不同的词法环境
+
+        var lis = document.querySelectorAll('li');
+        // for (var i = 0; i < lis.length; i++) {
+        //     lis[i].onclick = function () {
+        //         alert(i)
+        //     }
+           
+        // }
+        
+        for (var i = 0; i < lis.length; i++) {
+            (function (j) {
+                lis[j].onclick = function () {
+                    alert(j)
+                }
+            })(i)
+        }
+    </script>
+</body>
+</html>

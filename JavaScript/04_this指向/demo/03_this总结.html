@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1.严格模式下和非严格模式下
+        // function foo () {
+        //     // 'use strict';
+        //     console.log(this);
+        // }
+        // foo()
+
+
+        // 2.通过对象访问方法
+        // var obj = {
+        //     foo: function(){
+        //         console.log(this);
+        //     }
+        // }
+        // obj.foo()
+
+
+        // 3.ES6 中的箭头函数并不会创建其自身的执行上下文，所以箭头函数中的 this 取决于它的外部函数
+        // var obj = {
+        //     foo: function(){
+        //         var fn = ()=>{
+        //             console.log(this);
+        //         }  
+        //         fn()  
+        //     }
+        // }
+        // obj.foo()
+
+        // 4.new 关键字构建好了一个新对象，并且构造函数中的 this 其实就是新对象本身
+        // function Obj (name) {
+        //     this.sex = '女';
+        //     this.age = '20';
+        //     this.name = name;
+        // }
+        // var obj1 = new Obj('王美丽');
+        // console.log(obj1);
+
+        // 5. 嵌套函数中的this不继承
+        // var obj = {
+        //     foo: function () {
+        //         var fn = function () {
+        //             console.log(this);
+        //         }
+        //         fn()
+        //     }
+        // }
+        // obj.foo()
+
+
+        // 解决this关键字不继承的问题
+        // 1. 使用箭头函数
+        var myObj = {
+            name: "闷倒驴",
+            showThis: function () {
+                console.log(this); // myObj
+                var bar = () => {
+                    this.name = "王美丽";
+                    console.log(this) // window
+                }
+                bar();
+            }
+        };
+        myObj.showThis();
+        console.log(myObj.name);
+        console.log(window.name);
+
+        // 2. 将this关键字存储在变量中
+        // var myObj = {
+        //     name: "闷倒驴",
+        //     showThis: function () {
+        //         console.log(this); // myObj
+        //         var self = this;
+        //         var bar = function () {
+        //             self.name = "王美丽";
+        //             console.log(self) // window
+        //         }
+        //         bar();
+        //     }
+        // };
+        // myObj.showThis();
+        // console.log(myObj.name);
+        // console.log(window.name);
+    </script>
+</body>
+
+</html>

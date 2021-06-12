@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 3.柯里化（数学家柯里提出的）：把一个多参数的函数转化为单参数函数的方法
+        // 应用一：参数复用
+        // 享受同一个函数作用域，但是词法环境不同
+        // 非柯里化
+        function check(reg, txt) {
+            return reg.test(txt)
+        }
+
+        
+        console.log(check(/^(13[0-9]|14[5|7]|15[0|1|2|3|4|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/, '15123422345'))         //true
+        console.log(check(/^(13[0-9]|14[5|7]|15[0|1|2|3|4|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/, '123'))    //true
+
+        // Currying后
+        function curryingCheck(reg) {
+            return function (txt) {
+                return reg.test(txt)
+            }
+        }
+
+        var isPhone = curryingCheck(/^(13[0-9]|14[5|7]|15[0|1|2|3|4|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/)
+        console.log(isPhone('15810606459'))    // true
+
+        var isEmail = curryingCheck(/^\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*$/)
+        console.log(isEmail('wyn@nowcoder.com'))      // false
+
+
+    </script>
+</body>
+</html>

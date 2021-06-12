@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <ul>
+    <li>0</li>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+  </ul>
+  <script>
+    // 1. 获取ul元素
+    var ul = document.querySelector('ul');
+    // 2. 给ul添加点击事件
+    ul.addEventListener('click',function(){
+    // 3. 在事件处理程序中打印，当前点击的元素的内容
+      console.log(event.target.innerHTML);
+      console.log(this);  
+    })
+  </script>
+</body>
+</html>

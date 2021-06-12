@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <a href="https://www.baidu.com/">百度</a>
+  <script>
+  // 1. 获取a元素
+  var a = document.querySelector('a');
+  // 2. 绑定点击事件
+  a.onclick = function(){
+  // 3. 添加事件处理程序，阻止默认事件
+    event.preventDefault();
+  }
+  </script>
+</body>
+</html>

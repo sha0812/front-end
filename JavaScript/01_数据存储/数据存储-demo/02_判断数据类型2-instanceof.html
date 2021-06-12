@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 可以区分复杂数据类型
+        console.log([] instanceof Array); //true
+        console.log({} instanceof Object); //true
+        
+        // 可以检测原型链上所有类
+        console.log([] instanceof Object); // true
+        console.log(new Date() instanceof Object);// true
+        function Person() { }
+        console.log(new Person() instanceof Person); // true
+
+        // 基本类型值（number, string, boolean）转成包装类型才能进行检测
+        console.log(1 instanceof Number); // false
+        console.log(new Number(1) instanceof Number); // true
+        console.log('1' instanceof String); // false
+        console.log(new String('1') instanceof String); // true
+        console.log(true instanceof Boolean); // false
+        console.log(new Boolean(true) instanceof Boolean); // true
+
+        // 没有包装类型的基本类型值（undefined, null, symbol）无法检测
+        // console.log(undefined instanceof Undefined); // Uncaught ReferenceError: Undefined is not defined
+        console.log(undefined instanceof Object); // Uncaught ReferenceError: Null is not defined
+        // console.log(null instanceof Null); // false
+        console.log(null instanceof Object); // false
+        console.log(Symbol('1') instanceof Symbol); // false
+        console.log(Symbol('1') instanceof Object); // false
+
+
+
+
+    </script>
+</body>
+
+</html>

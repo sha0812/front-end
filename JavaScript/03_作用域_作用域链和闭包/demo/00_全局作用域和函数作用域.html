@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // 全局作用域中声明的变量的特点
+        // 1. 挂载在window对象下
+        // 2. 只要页面不关闭该变量就一直存活
+        // 注意：不要创建过多的全局变量，容易造成内存溢出
+        // var a = 1;
+        // console.log(window.a);
+        // 不要在全局作用域中以name关键字给变量命名，因为window对象默认有name属性，会造成覆盖，且产生未知错误
+        // console.log(name); // 并不是期望的undefined
+        // var name = 1;
+
+        // 函数作用域中声明的变量的特点
+        // 1. 只在函数中能够访问到
+        // 2. 函数执行结束，变量销毁
+        // function fun (){
+        //     var b = 2;
+        //     console.log(b);
+        // }
+        // fun();
+        // console.log(b)
+    </script>
+</body>
+</html>

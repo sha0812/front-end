@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 1. 变量提升引起的变量覆盖
+        var myname = "王美丽"
+        function showName() {
+            console.log(myname);
+            if (0) {
+                var myname = "闷倒驴"
+            }
+            console.log(myname);
+        }
+        showName()
+
+
+        // let myname = "王美丽"
+        // function showName() {
+        //     console.log(myname);
+        //     if (0) {
+        //         let myname = "闷倒驴"
+        //     }
+        //     console.log(myname);
+        // }
+        // showName()
+
+        // 2. 本该销毁的变量销毁不掉
+        // for (var i = 0; i < 7; i++) { }
+        // console.log(i);
+        // for (let i = 0; i < 100; i++) {
+        // }
+        // console.log(i)
+    </script>
+</body>
+
+</html>

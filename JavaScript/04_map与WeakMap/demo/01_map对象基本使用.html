@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        let map = new Map();
+        let o = { n: 1 };
+        // 给map添加o属性，值是’A‘
+        map.set(o, "A");
+        // 给map添加'2'属性，值是9
+        map.set("2", 9);
+        // 判断是否存在’2‘属性
+        console.log(map.has("2"));
+        // 获取o属性值
+        console.log(map.get(o));
+        // 查看map
+        console.log(map);
+        // 返回数组
+        map.entries();
+        console.log(map.entries());
+        // 删除’2‘属性
+        // map.delete("2");
+        // // 清空所有属性
+        // map.clear();
+
+        //create a map from iterable object
+        let map_1 = new Map([['key1', 'value1'], ['key2', 'value2']]);
+        console.log(map_1.size); //number of keys
+
+      
+
+    </script>
+</body>
+
+</html>

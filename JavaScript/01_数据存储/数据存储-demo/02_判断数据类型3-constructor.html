@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <script>
+        // 可以检测其构造函数
+        console.log([].constructor === Array); // true
+        console.log({}.constructor === Object);// true
+        function Person() { }
+        console.log(new Person().constructor === Person);// true
+
+        // 原型链不会干扰
+        console.log([].constructor === Object); // false
+
+    </script>
+</body>
+
+</html>

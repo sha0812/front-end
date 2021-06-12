@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+    div{
+      width: 200px;
+      height: 200px;
+      background-color: yellow;
+    }
+    p{
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 100px;
+      height: 100px;
+      background-color: skyblue;
+    }
+    .grandpa{
+      width: 400px;
+      height: 400px;
+      background-color: yellow;
+    }
+    .father{
+      width: 200px;
+      height: 200px;
+      background-color: violet;
+    }
+    .son {
+      width: 100px;
+      height: 100px;
+      background-color: tomato;
+    }
+  </style>
+</head>
+<body>
+  <div class="grandpa">
+    <div class="father">
+      <div class="son"></div>
+    </div>
+  </div>
+  <script>
+    // 冒泡事件
+    // var grandpa = document.querySelector('.grandpa');
+    // grandpa.addEventListener('click',function(){
+    //   console.log('爷爷');
+    // })
+    // var father = document.querySelector('.father');
+    // father.addEventListener('click',function(){
+    //   console.log('爸爸');
+    // })
+    // var son = document.querySelector('.son');
+    // son.addEventListener('click',function(){
+    //   console.log('儿子');
+    //   //event.stopPropagation()
+    // })
+    
+    // 捕获事件
+    var grandpa = document.querySelector('.grandpa');
+    grandpa.addEventListener('click',function(){
+      console.log('爷爷');
+    },true)
+    var father = document.querySelector('.father');
+    father.addEventListener('click',function(){
+      console.log('爸爸');
+    },true)
+    var son = document.querySelector('.son');
+    son.addEventListener('click',function(){
+      console.log('儿子');
+      event.stopPropagation()
+    },true)
+  </script>
+  
+</body>
+</html>

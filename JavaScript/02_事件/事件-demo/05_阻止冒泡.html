@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+  <style>
+  #grandfather{
+    width: 400px;
+    height: 400px;
+    background-color: rgb(34, 10, 22);
+  }
+  #father{
+    width: 200px;
+    height: 200px;
+    background-color: pink;
+  }
+  #son{
+    width: 100px;
+    height: 100px;
+    background-color: yellow;
+  }
+  </style>
+</head>
+<body>
+  <div id="grandfather">
+    <div id="father">
+      <div id="son"></div>
+    </div>
+  </div>
+  <script>
+  // 1. 获取所有元素
+  var grandfather = document.querySelector('#grandfather');
+  var father = document.querySelector('#father');
+  var son = document.querySelector('#son');
+  
+  // 2. 添加点击事件
+  grandfather.onclick = function(){
+  // 3. 在事件处理程序中，打印‘我是谁’
+    console.log('我是爷爷');
+    
+  }
+  // 2. 添加点击事件
+  father.onclick = function(){
+  // 3. 在事件处理程序中，打印‘我是谁’
+    console.log('我是爸爸');
+   
+    
+  }
+  // 2. 添加点击事件
+  son.onclick = function(){
+  // 3. 在事件处理程序中，打印‘我是谁’
+    console.log(event);
+    console.log('我是儿子');
+    event.stopPropagation();
+    
+  }
+  </script>
+</body>
+</html>

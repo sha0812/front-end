@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Document</title>
+</head>
+<body>
+  <!-- 
+    1.创建一个ul，内部有10个li元素，点击li元素的时候打印‘点击了li’
+   -->
+  <ul>
+    <li>0</li>
+    <li>1</li>
+    <li>2</li>
+    <li>3</li>
+    <li>4</li>
+    <li>5</li>
+    <li>6</li>
+    <li>7</li>
+    <li>8</li>
+    <li>9</li>
+  </ul>
+ 
+  <script>
+  // 1. 获取所有li元素
+  // var lis = document.querySelectorAll('li');
+  // // 2. 给每一个li元素添加点击事件
+  // for(var i =0;i<lis.length;i++){
+  //   lis[i].onclick = function(){
+  // // 3. 添加事件处理程序，打印‘我是li’
+  //     console.log('我是li元素');
+      
+  //   }
+  // }
+
+  var ul = document.querySelector('ul');
+ 
+  ul.addEventListener('click',function(){
+    console.log(event.target.innerHTML);
+  })
+  </script>
+</body>
+</html>
